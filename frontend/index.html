@@ -8,36 +8,40 @@
 </head>
 <body>
     <header class="header">
-        <img src="favicon.png" alt="ThermoSense" class="logo">
+        <div class="logo-container">
+            <img src="favicon.png" alt="ThermoSense" class="logo">
+        </div>
         <section>
-            <h1 class="maintitle">Bem-vindo ao Sistema ThermoSense!</h1>
-            <p> Um Sistema capaz de supervisionar e alertar sobre Temperatura e Umidade de um Ambiente </p>
+            <h1 class="header-title">Bem-vindo ao Sistema ThermoSense!</h1>
+            <p class="header-title"> Um Sistema capaz de supervisionar e alertar sobre Temperatura e Umidade de um Ambiente </p>
         </section>
     </header>
     <div class="page">
         <aside class="sidebar">
             <div class="container">
                 <h2 class="title2">Informações Atuais Detectadas</h2>
-                <p class="text">Atual Temperatura: </p>
-                <p class="text">Atual Umidade: </p>
-                <p class="text">Temperatura Máxima Tolerada: </p>
-                <p class="text">Temperatura Mínima Tolerada: </p>
-                <p class="text">Umidade Máxima Tolerada: </p>
-                <p class="text">Umidade Mínima Tolerada: </p>
+                <p class="text">Atual Temperatura: <span class="valor" id="temp-atual">--</span></p>
+                <p class="text">Atual Umidade: <span class="valor" id="umid-atual">--</span></p>
+                <p class="text">Temperatura Máxima Tolerada: <span class="valor" id="temp-max">--</span></p>
+                <p class="text">Temperatura Mínima Tolerada: <span class="valor" id="temp-min">--</span></p>
+                <p class="text">Umidade Máxima Tolerada: <span class="valor" id="umid-max">--</span></p>
+                <p class="text">Umidade Mínima Tolerada: <span class="valor" id="umid-min">--</span></p>
+                <p class="text">Taxa de Atualização: <span class="valor" id="taxa-atualizacao">--</span></p>
             </div>
             <div class="container">
                 <h2 class="title2"> Definir Limites de Tolerância</h2>
                 <p class="text2"> Temperatura é dada em Graus Celsius (ºC) </p>
                 <p class="text2"> Umidade é dada em Porcentagem (%)</p>
+                <p class="text2"> Taxa de Atualização em Milissegundos (ms)</p>
                 <p class="text2"> Insira somente o valor numérico, sem a unidade</p>
                 <form id="input-form">
                     <label for="maxTemp"> Novo Limite de Temperatura Máxima</label>
                     <input type="text" id="maxTemp" placeholder="Padrão é 30.0">
-                    <label for="maxTemp"> Novo Limite de Temperatura Mínima</label>
+                    <label for="minTemp"> Novo Limite de Temperatura Mínima</label>
                     <input type="text" id="minTemp" placeholder="Padrão é 10.0">
-                    <label for="maxTemp"> Novo Limite de Umidade Máxima</label>
+                    <label for="maxUmid"> Novo Limite de Umidade Máxima</label>
                     <input type="text" id="maxUmid" placeholder="Padrão é 50.0">
-                    <label for="maxTemp"> Novo Limite de Umidade Mínima</label>
+                    <label for="minUmid"> Novo Limite de Umidade Mínima</label>
                     <input type="text" id="minUmid" placeholder="Padrão é 5.0">
                     <button type="submit" class="btn">Atualizar</button>
                 </form>
@@ -59,9 +63,9 @@
                 <h2 class="title">Sobre o Sistema: </h2>
                 <p class="text"> O ThermoSense é um sistema de detecção, supervisão e alerta de temperatura e umidade ambientes, cujo propósito é a telemetria de um cômodo fechado. O projeto é composto por um hardware eletrônico e um software o qual você está interagindo.</p>
                 <p class="text3"> Mais informações no arquivo README no <a href="https://github.com/rottoni/thermosense">repositório do Github</a> </p>
-            </div> 
+            </div>
         </main>
     </div>
-    <script src="/src/login/script.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

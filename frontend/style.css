@@ -18,18 +18,31 @@ body {
 }
 
 .header {
-    background-color: #f1f1f7;
+    background-color: #602ab8;
     padding: 1rem;
     border-radius: 8px;
     margin: 1rem;
     display: flex;
     justify-content: center;
+    min-width:640px;
 }
 
 .logo {
     width: 64px;
     height: auto;
+    
+}
+
+.logo-container{
+    background-color: #f1f1f7;
+    border-radius: 64px;
+    padding: 0.5rem;
+    padding-bottom: 0.3rem;
     margin-right: 6rem;
+}
+
+.header-title{
+    color:white;
 }
 
 .page {
@@ -44,6 +57,11 @@ body {
     flex: 0 0 480px;
 }
 
+.valor { 
+    font-weight: bold;
+    color: #602ab8;
+}
+
 .main-container{
     flex: 1;
     min-width: 0;
@@ -54,6 +72,7 @@ body {
     padding: 0.5rem;
     padding-top: 1rem;
     margin-right: 0.5rem;
+    min-width: 480px;
 }
 
 .container{
