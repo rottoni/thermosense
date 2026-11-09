@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>ThermoSense</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <header>
+                <section class="logo-wrapper">
+                    <img src="/assets/logo.png" alt="ThermoSense" class="logo">
+                </section>
+            </header>
+            <h1 class="maintitle">Bem-vindo ao Sistema ThermoSense!</h1>
+            <p class="text"> Um Sistema capaz de supervisionar e alertar sobre Temperatura e Umidade de um Ambiente </p>
+        </div>
+
+        <div class="container">
+            <h2 class="title"> Definição de limites de temperatura e umidade</h3>
+            <form id="input">
+                <label for="maxTemp"> Limite de Temperatura Máxima</label><br>
+                <input type="text" id="maxTemp" placeholder="Padrão é 30.0" required><br>
+                <label for="maxTemp"> Limite de Temperatura Mínima</label><br>
+                <input type="text" id="minTemp" placeholder="Padrão é 10.0" required><br>
+                <label for="maxTemp"> Limite de Umidade Máxima</label><br>
+                <input type="text" id="maxUmid" placeholder="Padrão é 50.0" required><br>
+                <label for="maxTemp"> Limite de Umidade Mínima</label><br>
+                <input type="text" id="minUmid" placeholder="Padrão é 5.0" required><br>
+                <button type="submit" class="btn btn-login">Enviar</button>
+            </form>
+        </div>
+
+        <div class="container">
+            <h2 class="title">Informações atuais detectadas:</h3>
+            <p class="text">Atual Temperatura: </p>
+            <p class="text">Atual Umidade: </p>
+            <p class="text">Temperatura Máxima Tolerada: </p>
+            <p class="text">Temperatura Mínima Tolerada: </p>
+            <p class="text">Umidade Máxima Tolerada: </p>
+            <p class="text">Umidade Mínima Tolerada: </p>
+        </div>
+
+        <div class="container">
+            <h2 class="title">Graficos medidos desde o último Reset</h2>
+            <h3>>> Temperatura: </h3>
+            { gráfico }
+            <h3>>> Umidade: </h3>
+            { gráfico }
+        </div>
+
+        <div class="container">
+            <h3>Sobre o Sistema: </h3>
+            <p> O ThermoSense é um sistema de detecção, supervisão e alerta de temperatura e umidade ambientes, cujo propósito é a telemetria de um cômodo fechado. O projeto é composto por um hardware eletrônico e um software o qual você está interagindo.</p>
+        </div>
+    </main>
+
+    <script src="/src/login/script.js" defer></script>
+</body>
+</html>
