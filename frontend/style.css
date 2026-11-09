@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    background-size: cover;          /* preenche a tela inteira */
+    background-position: center;     /* centraliza a imagem */
+    background-repeat: no-repeat;    /* não repete */
+    background-attachment: fixed;    /* fica parada enquanto a página rola */
+    background-color: #6723e4;       /* fallback */
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('fundo.jpg');
+}
+
+.header {
+    background-color: #f1f1f7;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 64px;
+    height: auto;
+    margin-right: 6rem;
+}
+
+.page {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+}
+
+.sidebar {
+    padding: 1rem;
+    flex: 0 0 480px;
+}
+
+.main-container{
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    padding-top: 1rem;
+    margin-right: 0.5rem;
+}
+
+.container{
+    background-color: #f1f1f7;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.container-status{
+    background-color: black;
+}
+
+.status {
+    color: white;
+}
+
+.text {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    text-align: center;
+    color: #253a57;
+}
+.text2 {
+    align-items: center;
+    text-align: center;
+    color: #253a57;
+}
+
+.text3 {
+    align-items: center;
+    text-align: center;
+    color: #253a57;
+    margin-bottom: 2rem;
+}
+
+.title{
+    margin-top: 8px;
+    margin-bottom: 32px;
+}
+
+.title2{
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+#input-form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+input{
+    padding:0.5rem;
+    border-radius: 4px;
+}
+
+label{
+    margin:0.5rem;
+}
+
+.btn{
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2ad544;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #0fa425;
+}
