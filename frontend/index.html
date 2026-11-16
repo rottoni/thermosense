@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>ThermoSense</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="../assets/favicon.png?v=2">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
         <div class="logo-container">
-            <img src="favicon.png" alt="ThermoSense" class="logo">
+            <img src="../assets/favicon.png" alt="ThermoSense" class="logo">
         </div>
         <section>
             <h1 class="header-title">Bem-vindo ao Sistema ThermoSense!</h1>
@@ -43,29 +43,33 @@
                     <input type="text" id="maxUmid" placeholder="Padrão é 50.0">
                     <label for="minUmid"> Novo Limite de Umidade Mínima</label>
                     <input type="text" id="minUmid" placeholder="Padrão é 5.0">
+                    <label for="intervalo"> Nova Taxa de Atualização</label>
+                    <input type="text" id="intervalo" placeholder="Padrão é 2000">
                     <button type="submit" class="btn">Atualizar</button>
                 </form>
             </div>
         </aside>
         <main class="main-container">
             <div class="container container-status">
-                <h2 class="status"> Status: </h2>
+                <div>
+                    <h2 class="status-text1"> Status do Ambiente: <span id="status-ambiente"></span></h2>
+                    <h3 class="status-text2"> Status do Sistema: <span id="status-sistema"></span></h3>
+                </div>
+                <img src="../assets/alerta.png" alt="Alerta" class="alerta-logo">
             </div>
             <div class="container">
-                <h2 class="title">Graficos Atualizados</h2>
-                <h3>>> Temperatura: </h3>
-                { gráfico }
-                <h3>>> Umidade: </h3>
-                { gráfico }
+                <h2 class="title">Gráficos Atualizados</h2>
+                <canvas id="grafico-temperatura" class="grafico" role="img" aria-label="Histórico de temperatura"></canvas>
+                <canvas id="grafico-umidade" class="grafico" role="img" aria-label="Histórico de umidade"></canvas>
             </div>
-
             <div class="container">
                 <h2 class="title">Sobre o Sistema: </h2>
-                <p class="text"> O ThermoSense é um sistema de detecção, supervisão e alerta de temperatura e umidade ambientes, cujo propósito é a telemetria de um cômodo fechado. O projeto é composto por um hardware eletrônico e um software o qual você está interagindo.</p>
+                <p class="text"> O ThermoSense é um sistema de detecção, supervisão e alerta de temperatura e umidade ambientes, cujo propósito é a telemetria de um cômodo fechado. O projeto é composto por um hardware eletrônico e um software no qual você está interagindo.</p>
                 <p class="text3"> Mais informações no arquivo README no <a href="https://github.com/rottoni/thermosense">repositório do Github</a> </p>
             </div>
         </main>
     </div>
+    <script src="graficos.js" defer></script>
     <script src="script.js" defer></script>
 </body>
 </html>

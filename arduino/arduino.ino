@@ -5,11 +5,11 @@ const int pinSensor = 7;     // Pino do DHT22
 const int pinBuzzer = 2;    // Pino do buzzer
 
 // LIMITES PADRÃO (Alteráveis)
-float maxTemperatura = 30.0;  // em ºC
-float minTemperatura = 10.0;  // em ºC
-float maxUmidade = 50.0;      // em %
-float minUmidade = 5.0;       // em %
-int intervalo = 2000;        // 2000 milisegundos
+float maxTemperatura = 30.0;    // em ºC
+float minTemperatura = 10.0;    // em ºC
+float maxUmidade = 50.0;        // em %
+float minUmidade = 5.0;         // em %
+unsigned int intervalo = 2000;  // 2000 milisegundos
 
 // INSTANCIAR O SENSOR E INICIALIZAR DELAY
 unsigned long delayIntervalo = 100;
@@ -18,8 +18,15 @@ dht sensorDHT;
 void setup() {
   // Iniciando o pino do buzzer como saída
   pinMode(pinBuzzer, OUTPUT);
-  // Buzzer começa desligado
-  // digitalWrite(pinBuzzer, LOW);
+  // Som de Inicialização
+  // Buzzer produz um frequência de 600Hz por 0.5s, espera mais 0.5s e toca a mesma frequencia de novo
+  tone(pinBuzzer, 600);
+  delay(500);                                      
+  noTone(pinBuzzer);
+  delay(500);            
+  tone(pinBuzzer, 600);
+  delay(500);                                      
+  noTone(pinBuzzer); 
 
   // INICIANDO MONITOR SERIAL  
   Serial.begin(9600);
@@ -28,7 +35,7 @@ void setup() {
   Serial.println("\n");
   Serial.println("\t\t\t\t < Sistema ThermoSense >");
   Serial.println("-----------------------------------------------------------------------------------------------------");
-  Serial.println("Sistema,\tTempo(mS),\tUmidade(%),\tTemperatura(C),\t\tStatus de Alerta");
+  Serial.println("Sistema,\tTempo(mS),\tUmidade(%),\tTemperatura(C),\t\tStatus de Ambiente");
   Serial.println("-----------------------------------------------------------------------------------------------------");
   delay(1000);
 }
@@ -115,7 +122,7 @@ void loop() {
 void ativarBuzzer (bool ativar) {
   if (ativar){
     tone(pinBuzzer, 2000);  //gerando uma onda quadrada (tom) de frequência 2.000Hz
-    delay(intervalo/2);     //mantém o tom no Buzzer por METADE do intervalo definido                                           
+    delay(1000);            //mantém o tom no Buzzer por 1 segundo                                          
     noTone(pinBuzzer);      //interrompendo o tom no pino2
   }
 }
@@ -160,6 +167,13 @@ void processarComandosSerial() {
         Serial.print("-> Novo limite MÍNIMO de umidade definido para: ");
         Serial.print(minUmidade);
         Serial.println(" %");
+      } else if (comando == "INTERVALO" || comando == "intervalo") {
+        if (valor >= 1000 && valor <= 900000) {
+          intervalo = (unsigned long)valor;
+          Serial.print("-> Novo intervalo de leitura definido para: ");
+          Serial.print(intervalo);
+          Serial.println(" ms");
+        }
       }
     }
   }

@@ -14,11 +14,11 @@ body {
     background-color: #6723e4;       /* fallback */
     background-image:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('fundo.jpg');
+    url('../assets/fundo.jpg');
 }
 
 .header {
-    background-color: #602ab8;
+    background-color: #2633e7;
     padding: 1rem;
     border-radius: 8px;
     margin: 1rem;
@@ -59,7 +59,7 @@ body {
 
 .valor { 
     font-weight: bold;
-    color: #602ab8;
+    color: #2633e7;
 }
 
 .main-container{
@@ -84,12 +84,46 @@ body {
 }
 
 .container-status{
+    display: flex;
     background-color: black;
+    justify-content: space-between;
 }
 
-.status {
+.alerta-logo{
+    width: 96px;
+    height: auto;
+}
+
+.status-text1{
     color: white;
 }
+
+.status-text2 {
+    color: white;
+    margin-top: 1rem;
+}
+
+#status-ambiente,
+#status-sistema {
+    color: white;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;           /* espaço entre as etiquetas lado a lado */
+    vertical-align: middle;
+}
+
+.etiqueta {
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+}
+
+.etiqueta-ok     { background-color: #2ad544; }
+.etiqueta-perigo { background-color: #e53935; }
+.etiqueta-erro   { background-color: #e53935; }
+.etiqueta-neutro { background-color: #757575; }
 
 .text {
     margin-top: 1rem;
